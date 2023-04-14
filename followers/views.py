@@ -23,6 +23,40 @@ class FollowerList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
+class FollowedByList(generics.ListCreateAPIView):
+    """
+    Used to test the passing of a followed by attribute to filter against
+    """
+    serializer_class = FollowerSerializer
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly
+    ]
+
+    def get_queryset(self):
+        user = self.kwargs['owner']
+        return Follower.objects.filter(owner__username=user)
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
+class FollowingList(generics.ListCreateAPIView):
+    """
+    Used to test the passing of a following attribute to filter against
+    """
+    serializer_class = FollowerSerializer
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly
+    ]
+
+    def get_queryset(self):
+        followed_name = self.kwargs['followed_name']
+        return Follower.objects.filter(followed__username=followed_name)
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
 class FollowerDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve a follower
