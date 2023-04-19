@@ -68,7 +68,8 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = []
+# CORS_ORIGIN_ALLOW_ALL = True
 # if 'CLIENT_ORIGIN' in os.environ:
 #     CORS_ALLOWED_ORIGINS = [
 #         os.environ.get('CLIENT_ORIGIN'),
@@ -79,6 +80,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     CORS_ALLOWED_ORIGINS = [
 #         os.environ.get('CLIENT_ORIGIN_DEV')
 #     ]
+
 
 CORS_ALLOW_CREDENTIALS = True
 
