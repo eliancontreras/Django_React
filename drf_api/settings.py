@@ -68,7 +68,10 @@ ALLOWED_HOSTS = [
 ]
 
 
-CORS_ORIGIN_WHITELIST = []
+CORS_ORIGIN_WHITELIST = [
+    os.environ.get('CLIENT_ORIGIN'),
+    os.environ.get('CLIENT_ORIGIN_DEV')
+]
 
 
 CORS_ALLOW_CREDENTIALS = True
