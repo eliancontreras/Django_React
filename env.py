@@ -3,7 +3,7 @@ os.environ['CLOUDINARY_URL'] = 'cloudinary://554799797989625:uTJImOV-oSNlJyv2q6A
 
 os.environ['SECRET_KEY'] = 'l%p+$nyt&3&cn31s_)&85y-@l5(4k*12_hy+1v7w7v522^i1dc'
 
-os.environ['DEV'] = '1'
+# os.environ['DEV'] = '1'
 
 os.environ['ALLOWED_HOST'] = 'moments-photos.herokuapp.com'
 
