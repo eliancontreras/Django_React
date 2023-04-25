@@ -11,4 +11,4 @@ os.environ.setdefault(
     "DATABASE_URL", "postgres://ouaauiwy:2aWN0cZsvBnsFVd7jK4YBrrF5m7-ece1@rogue.db.elephantsql.com/ouaauiwy")
 
 
-test
+test new
